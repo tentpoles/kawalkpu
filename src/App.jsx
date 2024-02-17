@@ -305,7 +305,7 @@ export default function App() {
       style={{
         maxWidth: '1200px',
         margin: '0 auto',
-        padding: '72px 24px 42px 24px',
+        padding: '72px 24px 0 24px',
       }}
     >
       <Status state={state} />
@@ -339,6 +339,16 @@ export default function App() {
           fetchQueueTps={fetchQueueTps}
           requestLimit={requestLimit}
         />
+      </div>
+      <div
+          style={{
+            marginTop: '112px',
+            borderTop: '1px solid #E0E0E0',
+            fontSize: '14px',
+            padding: '12px 0',
+          }}
+      >
+          Developed by&nbsp;<a href="https://osbourneworks.com" target="_blank">B. Alkautsar</a>
       </div>
     </div>
   );
