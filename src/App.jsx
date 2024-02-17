@@ -312,6 +312,8 @@ export default function App() {
       <div>
         <Alert severity="warning">
           Tidak disarankan untuk device dengan spesifikasi low, karena pada sistem ini melakukan network request hingga 500 request++ (ugal-ugalan) dalam satu waktu secara terus menerus. Jika dipaksakan maka kemungkinan besar berpotensi mendapat response request timeout atau lag.
+          <br /><br />
+          Disclaimer: semua data yang digunakan adalah data resmi dari wesbite kpu (https://pemilu2024.kpu.go.id/pilpres/hitung-suara)
         </Alert>
       </div>
       <div
