@@ -6,10 +6,15 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
 const columns = [
-  { field: 'id', headerName: 'No.', width: 60 },
+  { field: 'id', headerName: '#', width: 60 },
+  { field: '01', headerName: 'Paslon 1', minWidth: 150 },
+  { field: '02', headerName: 'Paslon 2', minWidth: 150 },
+  { field: '03', headerName: 'Paslon 3', minWidth: 150 },
+  { field: 'total_suara_masuk', headerName: 'Total Suara Ketiga Paslon', minWidth: 250 },
+  { field: 'suara_sah', headerName: 'Suara Sah', minWidth: 150 },
   {
     field: 'url',
-    headerName: 'URL Sirekap',
+    headerName: '',
     minWidth: 200,
     renderCell: (params) => {
       const url = params.value.replace('https://sirekap-obj-data.kpu.go.id/pemilu/hhcw/ppwp/', 'https://pemilu2024.kpu.go.id/pilpres/hitung-suara/');
@@ -18,11 +23,6 @@ const columns = [
       )
     },
   },
-  { field: '01', headerName: 'Paslon 1', minWidth: 150 },
-  { field: '02', headerName: 'Paslon 2', minWidth: 150 },
-  { field: '03', headerName: 'Paslon 3', minWidth: 150 },
-  { field: 'total_suara_masuk', headerName: 'Total Suara Ketiga Paslon', minWidth: 250 },
-  { field: 'suara_sah', headerName: 'Suara Sah', minWidth: 150 },
 ];
 
 export default function DataTable({ state, fetchQueueTps, requestLimit }) {
@@ -35,15 +35,21 @@ export default function DataTable({ state, fetchQueueTps, requestLimit }) {
           Daftar TPS Dengan Suara Sumbang (Anomali).
         </Typography>
       </div>
-      <div style={{ height: 400, width: '100%', marginTop: '18px' }}>
+      <div style={{ height: 440, width: '100%', marginTop: '18px' }}>
         <DataGrid
           rows={state.dirtyVotes}
           columns={columns}
-          hideFooter
           loading={state.loading}
           classes={{
             root: 'data-grid',
+          }}initialState={{
+            pagination: {
+              paginationModel: {
+                pageSize: 100,
+              },
+            },
           }}
+          pageSizeOptions={[100]}
         />
       </div>
       {

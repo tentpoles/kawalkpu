@@ -238,7 +238,7 @@ export default function App() {
                   ['03']: queue.chart['100027'],
                   total_suara_masuk: totalSuaraMasuk,
                   suara_sah: queue.administrasi.suara_sah,
-                  id: lastId,
+                  id: `${lastId}.`,
                 });
               }
             }
